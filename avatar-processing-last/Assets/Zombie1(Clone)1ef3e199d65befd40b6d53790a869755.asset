@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1260b785da3e24ebe737764cc33de0, type: 3}
+  m_Name: Zombie1(Clone)1ef3e199d65befd40b6d53790a869755
+  m_EditorClassIdentifier: 
+  note: 
+  parentCalibrationData:
+  - bone: 14
+    data:
+      parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+        HumanRibcage/Base HumanRArmCollarbone/Base HumanRArmUpperarm/
+      childn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+        HumanRibcage/Base HumanRArmCollarbone/Base HumanRArmUpperarm/Base HumanRArmForearm/
+      tparentn: PipeServer/Body Parent/RIGHT_SHOULDER/
+      tchildn: PipeServer/Body Parent/RIGHT_ELBOW/
+      initialDir: {x: -0.99586207, y: -0.07459512, z: 0.05190704}
+      initialRotation: {x: -0.73274803, y: -0.018462688, z: 0.021441847, w: 0.67991173}
+      targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  - bone: 16
+    data:
+      parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+        HumanRibcage/Base HumanRArmCollarbone/Base HumanRArmUpperarm/Base HumanRArmForearm/
+      childn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+        HumanRibcage/Base HumanRArmCollarbone/Base HumanRArmUpperarm/Base HumanRArmForearm/Base
+        HumanRArmPalm/
+      tparentn: PipeServer/Body Parent/RIGHT_ELBOW/
+      tchildn: PipeServer/Body Parent/RIGHT_WRIST/
+      initialDir: {x: -0.93487585, y: -0.12825148, z: -0.33099642}
+      initialRotation: {x: -0.72980064, y: -0.01707545, z: -0.02275905, w: 0.68306804}
+      targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  - bone: 2
+    data:
+      parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanRThigh/
+      childn: Zombie1(Clone)/Base HumanPelvis/Base HumanRThigh/Base HumanRCalf/
+      tparentn: PipeServer/Body Parent/RIGHT_HIP/
+      tchildn: PipeServer/Body Parent/RIGHT_KNEE/
+      initialDir: {x: -0.06297647, y: -0.99679244, z: 0.04938428}
+      initialRotation: {x: 0.5409819, y: 0.46368816, z: -0.46256042, w: -0.5276076}
+      targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  - bone: 4
+    data:
+      parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanRThigh/Base HumanRCalf/
+      childn: Zombie1(Clone)/Base HumanPelvis/Base HumanRThigh/Base HumanRCalf/Base
+        HumanRFoot/
+      tparentn: PipeServer/Body Parent/RIGHT_KNEE/
+      tchildn: PipeServer/Body Parent/RIGHT_ANKLE/
+      initialDir: {x: -0.03351944, y: -0.89543533, z: 0.44392785}
+      initialRotation: {x: 0.57673836, y: 0.39773786, z: -0.52419466, w: -0.48414618}
+      targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  - bone: 13
+    data:
+      parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+        HumanRibcage/Base HumanLArmCollarbone/Base HumanLArmUpperarm/
+      childn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+        HumanRibcage/Base HumanLArmCollarbone/Base HumanLArmUpperarm/Base HumanLArmForearm/
+      tparentn: PipeServer/Body Parent/LEFT_SHOULDER/
+      tchildn: PipeServer/Body Parent/LEFT_ELBOW/
+      initialDir: {x: 0.97767746, y: -0.1919757, z: 0.08539379}
+      initialRotation: {x: 0.021441936, y: 0.6799128, z: -0.7327471, w: -0.01846248}
+      targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  - bone: 15
+    data:
+      parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+        HumanRibcage/Base HumanLArmCollarbone/Base HumanLArmUpperarm/Base HumanLArmForearm/
+      childn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+        HumanRibcage/Base HumanLArmCollarbone/Base HumanLArmUpperarm/Base HumanLArmForearm/Base
+        HumanLArmPalm/
+      tparentn: PipeServer/Body Parent/LEFT_ELBOW/
+      tchildn: PipeServer/Body Parent/LEFT_WRIST/
+      initialDir: {x: 0.94153297, y: -0.08103218, z: -0.3270312}
+      initialRotation: {x: -0.022758812, y: 0.683069, z: -0.7297996, w: -0.017074704}
+      targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  - bone: 1
+    data:
+      parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanLLegThigh/
+      childn: Zombie1(Clone)/Base HumanPelvis/Base HumanLLegThigh/Base HumanLLegCalf/
+      tparentn: PipeServer/Body Parent/LEFT_HIP/
+      tchildn: PipeServer/Body Parent/LEFT_KNEE/
+      initialDir: {x: 0.021244314, y: -0.99883753, z: 0.04326914}
+      initialRotation: {x: 0.46257317, y: 0.52760607, z: -0.54090947, w: -0.4637617}
+      targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  - bone: 3
+    data:
+      parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanLLegThigh/Base HumanLLegCalf/
+      childn: Zombie1(Clone)/Base HumanPelvis/Base HumanLLegThigh/Base HumanLLegCalf/Base
+        HumanLLegFoot/
+      tparentn: PipeServer/Body Parent/LEFT_KNEE/
+      tchildn: PipeServer/Body Parent/LEFT_ANKLE/
+      initialDir: {x: 0.024632158, y: -0.9223172, z: 0.3856477}
+      initialRotation: {x: 0.5241877, y: 0.48415527, z: -0.5767122, w: -0.39777395}
+      targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  - bone: 5
+    data:
+      parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanLLegThigh/Base HumanLLegCalf/Base
+        HumanLLegFoot/
+      childn: Zombie1(Clone)/Base HumanPelvis/Base HumanLLegThigh/Base HumanLLegCalf/Base
+        HumanLLegFoot/Base HumanLLegDigit11/
+      tparentn: PipeServer/Body Parent/LEFT_ANKLE/
+      tchildn: PipeServer/Body Parent/LEFT_FOOT_INDEX/
+      initialDir: {x: 0.23820168, y: -0.6122337, z: -0.7539429}
+      initialRotation: {x: 0.086307675, y: 0.7651466, z: -0.07117147, w: -0.63406336}
+      targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  - bone: 6
+    data:
+      parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanRThigh/Base HumanRCalf/Base
+        HumanRFoot/
+      childn: Zombie1(Clone)/Base HumanPelvis/Base HumanRThigh/Base HumanRCalf/Base
+        HumanRFoot/Base HumanRDigit11/
+      tparentn: PipeServer/Body Parent/RIGHT_ANKLE/
+      tchildn: PipeServer/Body Parent/RIGHT_FOOT_INDEX/
+      initialDir: {x: -0.23834576, y: -0.58729833, z: -0.7734805}
+      initialRotation: {x: 0.071175665, y: 0.6343209, z: -0.08637272, w: -0.76492554}
+      targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  spineUpDown:
+    parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/
+    childn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+      HumanRibcage/Base HumanNeck/
+    tparentn: VirtualHip/
+    tchildn: VirtualNeck/
+    initialDir: {x: -0.037198324, y: 0.9503228, z: -0.30903548}
+    initialRotation: {x: -0.5531787, y: 0.4404466, z: -0.55317885, w: 0.4404467}
+    targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  hipsTwist:
+    parentn: Zombie1(Clone)/Base HumanPelvis/
+    childn: Zombie1(Clone)/Base HumanPelvis/
+    tparentn: PipeServer/Body Parent/RIGHT_HIP/
+    tchildn: PipeServer/Body Parent/LEFT_HIP/
+    initialDir: {x: 0.9927872, y: 0.08647011, z: 0.08304581}
+    initialRotation: {x: -0.49912694, y: 0.5008715, z: -0.49912703, w: 0.50087154}
+    targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  chest:
+    parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/
+    childn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/
+    tparentn: PipeServer/Body Parent/RIGHT_HIP/
+    tchildn: PipeServer/Body Parent/LEFT_HIP/
+    initialDir: {x: 0.9927872, y: 0.08647011, z: 0.08304581}
+    initialRotation: {x: -0.45430407, y: 0.5418558, z: -0.45430416, w: 0.54185593}
+    targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  head:
+    parentn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+      HumanRibcage/Base HumanNeck/
+    childn: Zombie1(Clone)/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base
+      HumanRibcage/Base HumanNeck/Base HumanHead/
+    tparentn: VirtualNeck/
+    tchildn: PipeServer/Body Parent/NOSE/
+    initialDir: {x: 0.12936175, y: 0.6051715, z: -0.7855145}
+    initialRotation: {x: -0.59197164, y: 0.3867422, z: -0.5919717, w: 0.3867423}
+    targetRotation: {x: 0, y: 0, z: 0, w: 0}
