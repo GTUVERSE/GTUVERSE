@@ -1,0 +1,167 @@
+3. Initialize Camera and Send Images
+  // Initialize camera
+  Future<void> initializeCamera() async {
+    final cameras = await availableCameras();
+    final camera = cameras.first;
+    
+    _cameraController = CameraController(
+      camera,
+      ResolutionPreset.medium,
+      enableAudio: false,
+    );
+    
+    await _cameraController!.initialize();
+  }
+  
+  // Start streaming camera frames
+  Future<void> startStreaming() async {
+    if (_channel == null || _cameraController == null) {
+      throw Exception('WebSocket or camera not initialized');
+    }
+    
+    if (!_cameraController!.value.isInitialized) {
+      await _cameraController!.initialize();
+    }
+    
+    _isStreaming = true;
+    
+    // Stream camera frames at regular intervals
+    _cameraController!.startImageStream((CameraImage image) {
+      if (_isStreaming && _channel != null) {
+        _sendImageToServer(image);
+      }
+    });
+  }
+  
+  // Convert and send camera image to WebSocket server
+  void _sendImageToServer(CameraImage image) {
+    try {
+      // Prepare image data
+      final imageBytes = _convertImageToBytes(image);
+      
+      // Send image through WebSocket
+      _channel!.sink.add(imageBytes);
+      
+    } catch (e) {
+      print('Error sending image: $e');
+    }
+  }
+  
+  // Convert CameraImage to bytes that can be sent over WebSocket
+  Uint8List _convertImageToBytes(CameraImage image) {
+    // Simple conversion - YUV format to bytes
+    // For production, you'll want to compress this to JPEG/PNG
+    // or use more efficient binary formats
+    
+    // This is a simplified version - you'll need a proper conversion
+    // based on your camera's image format
+    final Uint8List bytes = image.planes[0].bytes;
+    
+    // Create a simple header with image info
+    final header = Uint8List.fromList([
+      image.width >> 8, image.width & 0xFF,      // Width (2 bytes)
+      image.height >> 8, image.height & 0xFF,    // Height (2 bytes)
+      image.format.raw,                          // Format (1 byte)
+    ]);
+    
+    // Combine header and image data
+    final result = Uint8List(header.length + bytes.length);
+    result.setRange(0, header.length, header);
+    result.setRange(header.length, result.length, bytes);
+    
+    return result;
+  }
+  
+  // Stop streaming
+  void stopStreaming() {
+    _isStreaming = false;
+    if (_cameraController != null && _cameraController!.value.isStreamingImages) {
+      _cameraController!.stopImageStream();
+    }
+  }
+  
+  // Close connections
+  void dispose() {
+    stopStreaming();
+    _cameraController?.dispose();
+    _channel?.sink.close();
+  }
+}
+5. Using the Service in a Flutter App
+class CameraScreen extends StatefulWidget {
+  @override
+  _CameraScreenState createState() => _CameraScreenState();
+}
+
+class _CameraScreenState extends State<CameraScreen> {
+  final CameraStreamingService _service = CameraStreamingService();
+  bool _isConnected = false;
+  bool _isStreaming = false;
+  
+  @override
+  void initState() {
+    super.initState();
+    _initializeService();
+  }
+  
+  Future<void> _initializeService() async {
+    try {
+      await _service.initializeCamera();
+      await _service.connectToServer('your-vps-ip', 52733);
+      setState(() {
+        _isConnected = true;
+      });
+    } catch (e) {
+      print('Failed to initialize: $e');
+    }
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Camera Streaming')),
+      body: Column(
+        children: [
+          if (_service._cameraController != null && 
+              _service._cameraController!.value.isInitialized)
+            Expanded(
+              child: CameraPreview(_service._cameraController!),
+            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: _isConnected && !_isStreaming
+                    ? () async {
+                        await _service.startStreaming();
+                        setState(() {
+                          _isStreaming = true;
+                        });
+                      }
+                    : null,
+                child: Text('Start Streaming'),
+              ),
+              ElevatedButton(
+                onPressed: _isStreaming
+                    ? () {
+                        _service.stopStreaming();
+                        setState(() {
+                          _isStreaming = false;
+                        });
+                      }
+                    : null,
+                child: Text('Stop Streaming'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+  
+  @override
+  void dispose() {
+    _service.dispose();
+    super.dispose();
+  }
+}
