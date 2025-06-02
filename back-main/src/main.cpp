@@ -14,7 +14,7 @@ RoomUserService roomUserService;
 int main() {
     crow::SimpleApp app;
     UserService userService;
-//her ikisi için register
+//her ikisi için register olma
     CROW_ROUTE(app, "/register").methods("POST"_method)
     ([&](const crow::request& req){
         auto body = crow::json::load(req.body);
